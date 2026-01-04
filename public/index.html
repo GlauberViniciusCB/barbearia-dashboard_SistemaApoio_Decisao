@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Barbearia</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✂️ Dashboard Barbearia</h1>
+            <p>Sistema de Apoio à Decisão</p>
+        </header>
+        
+        <div class="filtros">
+            <select id="filtroMes">
+                <option value="todos">Todos os meses</option>
+                <option value="2024-01">Janeiro 2024</option>
+                <option value="2024-02">Fevereiro 2024</option>
+            </select>
+            <button onclick="carregarDados()">Filtrar</button>
+        </div>
+        
+        <div class="dashboard">
+            <!-- Gráfico 1: Barras -->
+            <div class="card">
+                <h2>📊 Serviços Realizados</h2>
+                <canvas id="graficoBarras"></canvas>
+                <p class="dica">Clique em uma barra para destacar</p>
+            </div>
+            
+            <!-- Gráfico 2: Linhas -->
+            <div class="card">
+                <h2>📈 Evolução Mensal</h2>
+                <canvas id="graficoLinhas"></canvas>
+            </div>
+            
+            <!-- Gráfico 3: Pizza -->
+            <div class="card">
+                <h2>🥧 Distribuição</h2>
+                <canvas id="graficoPizza"></canvas>
+                <p class="dica">Passe o mouse para ver detalhes</p>
+            </div>
+            
+            <!-- Gráfico 4: Rosca -->
+            <div class="card">
+                <h2>🍩 Faturamento por Serviço</h2>
+                <canvas id="graficoRosca"></canvas>
+            </div>
+        </div>
+        
+        <div class="insights">
+            <h3>💡 Insights para Decisão:</h3>
+            <ul id="listaInsights">
+                <li>Carregando análises...</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
